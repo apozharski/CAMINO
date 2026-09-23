@@ -13,6 +13,12 @@ from camino.utils.conversion import to_0d
 
 logger = logging.getLogger(__name__)
 
+#
+try:
+    ca.GlobalOptions.setNumpyMode(1)
+except AttributeError:
+    pass
+
 
 def almost_equal(a, b, EPS=1e-5):
     """Check if almost equal."""
